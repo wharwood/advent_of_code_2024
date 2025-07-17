@@ -13,6 +13,9 @@ class grid_node:
         if not isinstance(candidate, grid_node):
             return NotImplemented
         return self.x == candidate.x and self.y == candidate.y and self.value == candidate.value
+    
+    def __hash__(self):
+        return hash((self.x, self.y, self.value))
 
 class grid:
     def __init__(self, nodes: list[grid_node] = []) -> None:
