@@ -81,7 +81,7 @@ class grid:
         directions = [(1,0), (-1,0), (0,1), (0,-1)]
         for dx, dy in directions:
             x, y = node.x + dx, node.y + dy
-            if x == node.x and y == node.y:
+            if self.is_in_grid(x, y):
                 neighbors.append(self.get_node(x, y))
         return neighbors
 
