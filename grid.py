@@ -27,9 +27,8 @@ class grid:
             for i in range(self.get_len_x()):
                 for node in self.nodes:
                     if i == node.x and j == node.y:
-                        output += node.value
+                        output += str(node.value)
                         break
-                output += " "
             output += "\n"
         return output
     
@@ -70,7 +69,7 @@ class grid:
                 return node
         raise ValueError(f"No node at ({x},{y}).")
     
-    def get_nodes_with_value(self, value: str) -> list[grid_node]:
+    def get_nodes_with_value(self, value) -> list[grid_node]:
         matches = []
         for node in self.nodes:
             if node.value == value:
@@ -133,3 +132,7 @@ class grid:
             return
         else:
             raise ValueError("One or both nodes not found in grid.")
+        
+    def change_values_type(self, value_type: type) -> None:
+        for node in self.nodes:
+            node.value = value_type(node.value)
