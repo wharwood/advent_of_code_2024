@@ -78,11 +78,11 @@ class grid:
 
     def get_neighbors(self, node: grid_node) -> list[grid_node]:
         neighbors = []
-        for n in self.nodes:
-            if (n.x+1 == node.x or n.x-1 == node.x) and n.y == node.y:
-                neighbors.append(n)
-            elif (n.y+1 == node.y or n.y-1 == node.y) and n.x == node.x:
-                neighbors.append(n)
+        directions = [(1,0), (-1,0), (0,1), (0,-1)]
+        for dx, dy in directions:
+            x, y = node.x + dx, node.y + dy
+            if x == node.x and y == node.y:
+                neighbors.append(self.get_node(x, y))
         return neighbors
 
     def get_node_up(self, node: grid_node) -> grid_node | None:
