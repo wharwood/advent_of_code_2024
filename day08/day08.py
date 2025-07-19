@@ -76,7 +76,6 @@ def do_part_1(input):
     for freq in frequencies:
         antinodes.update(freq.antinodes)
     print(len(antinodes))
-    print(grid(list(antinodes)))
 
 def do_part_2(input):
     map = grid()
@@ -89,4 +88,3 @@ def do_part_2(input):
     for freq in frequencies:
         antinodes.update(freq.antinodes)
     print(len(antinodes))
-    print(grid(list(antinodes)))
