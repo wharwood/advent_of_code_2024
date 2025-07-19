@@ -28,6 +28,8 @@ class grid:
                 for node in self.nodes:
                     if i == node.x and j == node.y:
                         output += node.value
+                        break
+                output += " "
             output += "\n"
         return output
     
@@ -46,6 +48,21 @@ class grid:
     
     def get_len_y(self) -> int:
         return max([node.y for node in self.nodes]) - min([node.y for node in self.nodes]) + 1
+    
+    def get_max_x(self) -> int:
+        return max([node.x for node in self.nodes if self.nodes is not None])
+    
+    def get_max_y(self) -> int:
+        return max([node.y for node in self.nodes if self.nodes is not None])
+    
+    def get_min_x(self) -> int:
+        return min([node.x for node in self.nodes if self.nodes is not None])
+    
+    def get_mix_y(self) -> int:
+        return min([node.y for node in self.nodes if self.nodes is not None])
+    
+    def is_in_grid(self, x: int, y: int) -> bool:
+        return any(node.x == x and node.y == y for node in self.nodes)
     
     def get_node(self, x: int, y: int) -> grid_node:
         for node in self.nodes:
