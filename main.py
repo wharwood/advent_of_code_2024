@@ -7,6 +7,7 @@ from day06 import day06
 from day07 import day07
 from day08 import day08
 from day09 import day09
+from day10 import day10
 from helpers import helpers
 
 # input_lines = helpers.parse_input("day01/input.txt")
@@ -34,6 +35,9 @@ from helpers import helpers
 # input_lines = helpers.parse_input("day08/input.txt")
 # day08.do_part_1(input_lines)
 # day08.do_part_2(input_lines)
-input_lines = helpers.parse_input("day09/input.txt")
+# input_lines = helpers.parse_input("day09/input.txt")
 # day09.do_part_1(input_lines)
-day09.do_part_2(input_lines)
+# day09.do_part_2(input_lines)
+input_lines = helpers.parse_input("day10/input.txt")
+# day10.do_part_1(input_lines)
+day10.do_part_2(input_lines)
